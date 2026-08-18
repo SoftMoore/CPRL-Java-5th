@@ -6,23 +6,22 @@ have the following form.
 
 Most of the incomplete classes have valid constructors except as commented.
 Import statements are left in as hints.
+__________________________________________________________________________
 
-
-Classes in package edu.citadel.cprl
+Classes in package cprlc
 
 *ArrayType.java
-Compiler.java
+Cprlc.java
+* EnumType.java
 IdTable.java
 LoopContext.java
 * Parser.java
 * RecordType.java
-Scope.java
-* StringType.java
 SubprogramContext.java
 Type.java
+__________________________________________________________________________
 
-
-Classes in package edu.citadel.cprl.ast
+Classes in package cprlc.ast
 
 AddingExpr.java
 * ArrayTypeDecl.java
@@ -31,6 +30,7 @@ AST.java
 BinaryExpr.java
 CompositeInitializer.java
 * CompoundStmt.java
+ConditionalExpr.java ???
 * ConstDecl.java
 ConstValue.java
 Declaration.java
@@ -39,6 +39,7 @@ EmptyInitialDecl.java
 EmptyInitializer.java
 EmptyStatement.java
 EmptySubprogramDecl.java
+EnumTypeDecl.java ???
 * ExitStmt.java
 Expression.java
 FieldDecl.java
@@ -48,13 +49,13 @@ FunctionCallExpr.java
 * FunctionDecl.java
 IfStmt.java
 InitialDecl.java
+Initializer.java
 LogicalExpr.java
 * LoopStmt.java
 * MultiplyingExpr.java
 * NegationExpr.java
 * NotExpr.java
 OutputStmt.java
-Padding.java
 ParameterDecl.java
 * ProcedureCallStmt.java
 ProcedureDecl.java
@@ -63,12 +64,21 @@ Program.java
 * RecordTypeDecl.java
 * RelationalExpr.java
 * ReturnStmt.java
-SingleVarDecl.java
 Statement.java
-* StringTypeDecl.java
 SubprogramDecl.java
 UnaryExpr.java
 VarDecl.java
 * Variable.java
 VariableDecl.java
-VariableExpr.java
+__________________________________________________________________________
+
+Classes in package cprlc.builtins
+(Complete implementations are provided for all classes in this package.)
+
+BuiltinSubprogramDecl.java
+BuiltinSubprogramDecls.java
+FunChrDecl.java
+FunEofDecl.java
+FunOrdDecl.java
+ProcIncDecl.java
+

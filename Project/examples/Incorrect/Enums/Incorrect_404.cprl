@@ -1,0 +1,11 @@
+type RGB = <Red, Green, Blue>;
+type TrafficLight = <Red, Yellow, Green>;
+
+proc main()
+  {
+    var r : RGB := RGB.Red;
+    var t : TrafficLight := TrafficLight.Red;
+
+    r := t;        // can't assign a traffic light color to a variable of type RGB
+    t := r;        // can't assign an rgb value to variable of type TrafficLight
+  }

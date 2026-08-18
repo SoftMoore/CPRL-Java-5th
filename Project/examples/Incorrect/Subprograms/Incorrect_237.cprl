@@ -1,0 +1,29 @@
+// tests that types for variable parameters must be equal
+
+var iGlobal : Integer := 5;
+var bGlobal : Byte    := 5;
+
+proc main()
+  {
+    wInt(bGlobal);
+    writeln bGlobal;
+
+    wByte(iGlobal);
+    writeln iGlobal;
+  }
+
+proc wInt(var n : Integer)
+  {
+    write n, "   ";
+    n := 6;
+    write iGlobal, "   ";
+    n := 7;
+  }
+
+proc wByte(var b : Byte)
+  {
+    write b, "   ";
+    b := 6;
+    write iGlobal, "   ";
+    b := 7;
+  }

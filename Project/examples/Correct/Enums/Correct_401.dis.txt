@@ -1,0 +1,37 @@
+   0:  CALL 1
+   5:  HALT
+   6:  PROC 8
+  11:  LDLADDR 8
+  16:  LDCINT 3
+  21:  STOREW
+  22:  LDCSTR "Day number for var wed is "
+  79:  PUTSTR
+  80:  LDLADDR 8
+  85:  LOADW
+  86:  PUTINT
+  87:  PUTEOL
+  88:  LDCSTR "Day number for Friday is  "
+ 145:  PUTSTR
+ 146:  LDCINT 5
+ 151:  PUTINT
+ 152:  PUTEOL
+ 153:  LDLADDR 12
+ 158:  LDCINT0
+ 159:  STOREW
+ 160:  LDLADDR 12
+ 165:  LOADW
+ 166:  LDCINT 6
+ 171:  BG 58
+ 176:  LDCSTR "day number = "
+ 207:  PUTSTR
+ 208:  LDLADDR 12
+ 213:  LOADW
+ 214:  PUTINT
+ 215:  PUTEOL
+ 216:  LDLADDR 12
+ 221:  LDLADDR 12
+ 226:  LOADW
+ 227:  INC
+ 228:  STOREW
+ 229:  BR -74
+ 234:  RET0

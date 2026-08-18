@@ -1,0 +1,33 @@
+   PROGRAM 6
+   CALL _main
+   HALT
+_main:
+   LDGADDR 4
+   LDCCH 'Z'
+   STORE2B
+   LDCSTR "Enter 2 characters: "
+   PUTSTR
+   LDGADDR 0
+   GETCH
+   LDGADDR 2
+   GETCH
+   PUTEOL
+   LDCSTR "c1 = "
+   PUTSTR
+   LDGADDR 0
+   LOAD2B
+   PUTCH
+   PUTEOL
+   LDCSTR "c2 = "
+   PUTSTR
+   LDGADDR 2
+   LOAD2B
+   PUTCH
+   PUTEOL
+   LDCSTR "c3 = "
+   PUTSTR
+   LDGADDR 4
+   LOAD2B
+   PUTCH
+   PUTEOL
+   RET 0

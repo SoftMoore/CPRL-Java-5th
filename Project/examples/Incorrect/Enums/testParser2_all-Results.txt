@@ -1,0 +1,16 @@
+Parsing Incorrect_401.cprl...
+Parsing complete.
+
+Parsing Incorrect_402.cprl...
+*** Syntax error detected near line 1, character 48:
+    Identifier "Mon" is already defined in the current scope.
+*** Syntax error detected near line 1, character 53:
+    Identifier "Wed" is already defined in the current scope.
+Errors detected in Incorrect_402.cprl -- parsing terminated.
+
+Parsing Incorrect_403.cprl...
+Parsing complete.
+
+Parsing Incorrect_404.cprl...
+Parsing complete.
+

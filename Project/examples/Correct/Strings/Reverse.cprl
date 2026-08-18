@@ -1,0 +1,16 @@
+proc main()
+  {
+    var str : String := "12345";
+    write "Writing \"", str, "\" in reverse order is \"";
+    writeReversed(str);
+    writeln "\"", '.';
+  }
+
+// write the characters in str in reverse order
+proc writeReversed(str : String)
+  {
+    var bound : Integer;
+    bound := str.length - 1;
+    for i in 0..bound loop
+        write str[bound - i];
+  }

@@ -1,0 +1,48 @@
+// tests mixing types Byte and Integer for parameters and return types
+
+var nGlobal : Integer := 5;
+var bGlobal : Byte    := 5;
+
+proc main()
+  {
+    writeln(i2b(nGlobal));
+    writeln(i2b(bGlobal));
+    writeln(b2i(nGlobal));
+    writeln(b2i(bGlobal));
+
+    writeInt(nGlobal);
+    writeln nGlobal;
+
+    writeByte(bGlobal);
+    writeln bGlobal;
+  }
+
+proc writeInt(var n : Integer)
+  {
+    write n, "   ";
+    n := 6;
+    write nGlobal, "   ";
+    n := 7;
+  }
+
+proc writeByte(var b : Byte)
+  {
+    write b, "   ";
+    b := 6;
+    write bGlobal, "   ";
+    b := 7;
+  }
+
+fun i2b(n : Integer) : Byte
+  {
+    var b : Byte;
+    b := n;
+    return b;
+  }
+
+fun b2i(b : Byte) : Integer
+  {
+    var n : Integer;
+    n := b;
+    return n;
+  }

@@ -1,0 +1,13 @@
+// built-in inc() procedure
+// output should be
+// x = 6
+
+const five := 5;
+var x : Integer := five;
+
+proc main()
+  {
+    inc(x);
+    writeln "x = ", x;
+  }
+

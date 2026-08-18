@@ -1,0 +1,3 @@
+"Hello, " concatenated with "world." is "Hello, world."
+"Hello, " concatenated with "world." is "Hello, world."
+full name is John Moore

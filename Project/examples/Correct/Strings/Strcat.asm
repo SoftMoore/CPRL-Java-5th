@@ -1,0 +1,78 @@
+   CALL _main
+   HALT
+_main:
+   PROC 24
+   LDLADDR 8
+   LDCSTR "Hello, "
+   STOREW
+   LDLADDR 20
+   LDCSTR "John"
+   STOREW
+   LDLADDR 24
+   LDCSTR "Moore"
+   STOREW
+   LDLADDR 12
+   LDCSTR "world."
+   STOREW
+   LDLADDR 16
+   LDLADDR 8
+   LOADW
+   LDLADDR 12
+   LOADW
+   STRCAT
+   STOREW
+   LDCSTR "\""
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   PUTSTR
+   LDCSTR "\" concatenated with \""
+   PUTSTR
+   LDLADDR 12
+   LOADW
+   PUTSTR
+   LDCSTR "\" is \""
+   PUTSTR
+   LDLADDR 16
+   LOADW
+   PUTSTR
+   LDCSTR "\""
+   PUTSTR
+   PUTEOL
+   LDCSTR "\""
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   PUTSTR
+   LDCSTR "\" concatenated with \""
+   PUTSTR
+   LDLADDR 12
+   LOADW
+   PUTSTR
+   LDCSTR "\" is \""
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   LDLADDR 12
+   LOADW
+   STRCAT
+   PUTSTR
+   LDCSTR "\""
+   PUTSTR
+   PUTEOL
+   LDLADDR 28
+   LDLADDR 20
+   LOADW
+   LDCSTR " "
+   STRCAT
+   LDLADDR 24
+   LOADW
+   STRCAT
+   STOREW
+   LDCSTR "full name is "
+   PUTSTR
+   LDLADDR 28
+   LOADW
+   PUTSTR
+   PUTEOL
+   RET 0

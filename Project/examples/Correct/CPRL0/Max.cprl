@@ -1,0 +1,13 @@
+var x, y : Integer;
+
+proc main()
+  {
+    loop
+      {
+        writeln "Enter two integer values.  Enter two zeros to exit.";
+        read x;
+        read y;
+        exit when x = 0 and y = 0;
+        writeln "max of the two values is ", x > y ? x : y;
+      }
+  }

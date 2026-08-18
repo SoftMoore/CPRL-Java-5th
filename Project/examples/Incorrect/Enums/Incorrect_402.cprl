@@ -1,0 +1,12 @@
+type Day = <Mon, Tue, Wed, Thu, Fri, Sat, Sun, Mon, Wed>;   // Mon and Wed are repeated
+
+proc main()
+  {
+    var wDay : Day := Day.Wed;
+    writeln "Day number for Sunday is ", Day.Sun;
+    writeln "Day number for Friday is ", Day.Fri;
+    writeln "Day number for wDay is   ", wDay;
+
+    for d in Day.Sun..Day.Sat loop
+        writeln "day number = ", d;
+  }

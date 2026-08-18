@@ -1,0 +1,6 @@
+Name1 is John.
+Hello, John.
+Name1 changed to Joan.
+Hello, Joan.
+Name2 is Barbara.
+Hello, Barbara.

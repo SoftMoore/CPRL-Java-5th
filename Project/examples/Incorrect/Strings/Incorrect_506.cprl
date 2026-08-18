@@ -1,0 +1,6 @@
+proc main()
+  {
+    var name : String := "Joe";
+    writeln "name = ", name;
+    name.length := 5;             // can't modify length of a string
+  }

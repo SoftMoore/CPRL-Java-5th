@@ -1,0 +1,6 @@
+proc main()
+  {
+    var name : string;       // string should be String
+    name := "Johnny";
+    writeln "Name is ", name;
+  }

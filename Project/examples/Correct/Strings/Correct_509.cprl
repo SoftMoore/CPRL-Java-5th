@@ -1,0 +1,13 @@
+proc main()
+  {
+    var name : String := "John";
+    writeln "Name is ", name, '.';
+    changeName(name);
+    writeln "Name changed to ", name, '.';
+  }
+
+proc changeName(var n : String)   // test pass by reference
+  {
+    n := "Johnny";
+  }
+

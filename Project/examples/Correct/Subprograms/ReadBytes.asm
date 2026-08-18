@@ -1,0 +1,24 @@
+   CALL _main
+   HALT
+_main:
+   PROC 1
+L0:
+   LDLADDR 8
+   GETBYTE
+   ALLOC 1
+   CALL _eof
+   BNZ L1
+   LDLADDR 8
+   LOADB
+   BYTE2INT
+   BYTE2INT
+   PUTINT
+   PUTEOL
+   BR L0
+L1:
+   RET 0
+_eof:
+   LDLADDR -1
+   GETEOF
+   STOREB
+   RET0

@@ -1,0 +1,43 @@
+   CALL _main
+   HALT
+_main:
+   PROC 16
+   LDLADDR 8
+   LDCINT 5
+   LDCINT 2
+   STORE 8
+   LDCSTR "Point("
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   PUTINT
+   LDCSTR ", "
+   PUTSTR
+   LDLADDR 8
+   LDCINT 4
+   ADD
+   LOADW
+   PUTINT
+   LDCSTR ")"
+   PUTSTR
+   PUTEOL
+   LDLADDR 16
+   LDLADDR 8
+   LOAD 8
+   STORE 8
+   LDCSTR "Point("
+   PUTSTR
+   LDLADDR 16
+   LOADW
+   PUTINT
+   LDCSTR ", "
+   PUTSTR
+   LDLADDR 16
+   LDCINT 4
+   ADD
+   LOADW
+   PUTINT
+   LDCSTR ")"
+   PUTSTR
+   PUTEOL
+   RET 0

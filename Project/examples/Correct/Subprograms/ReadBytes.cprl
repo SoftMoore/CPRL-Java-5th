@@ -1,0 +1,17 @@
+// When reading from the command line, signal End-of-File
+//   - Windows: CTRL + Z
+//   - Linux:   CTRL + D
+// End-of-File is automatically detected when input is redirected from a file.
+// Works with binary files, as in
+//     cprl ReadBytes < ReadBytes.obj
+
+proc main()
+  {
+    var b : Byte;
+    loop
+      {
+        read b;
+        exit when eof();
+        writeln b;
+      }
+  }

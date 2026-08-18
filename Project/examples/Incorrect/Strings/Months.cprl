@@ -1,0 +1,10 @@
+var months : array[12] of String =      // "=" instead of ":="
+  { "January", "February", "March",     "April",   "May",      "June",
+    "July",    "August",   "September", "October", "November", "December" };
+
+proc main()
+  {
+    writeln "The months are as follows:";
+    for monthNum in 1..12 loop
+        writeln months[monthNum - 1];
+  }

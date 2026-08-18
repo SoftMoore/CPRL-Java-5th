@@ -1,0 +1,1 @@
+Writing "12345" in reverse order is "54321".

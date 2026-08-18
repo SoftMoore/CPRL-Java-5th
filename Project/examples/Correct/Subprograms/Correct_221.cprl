@@ -1,0 +1,13 @@
+// Test user-defined procedure named ord() should not be a problem.
+
+proc main()
+  {
+    ord('A');
+    writeln chr(65);
+  }
+
+// user-defined ord() procedure
+proc ord(c : Char)
+  {
+    writeln 70;
+  }

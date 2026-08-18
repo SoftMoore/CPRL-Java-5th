@@ -1,0 +1,79 @@
+type Day = <Sun, Mon, Tue, Wed, Thu, Fri, Sat>;
+var  posArray : array[7] of Integer := { 0, 1, 2, 3, 4, 5, 6 };
+var  dayNames : array[7] of String
+       := { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+
+proc main()
+  {
+    var day : Day;
+
+    for d in Day.Sun..Day.Sat loop
+      {
+        writeln "for ", toString(d), ":";
+        writeln "    pos = ", pos(d);
+
+        if d > Day.Sun then
+            writeln "   pred = ", toString(pred(d));
+
+        if d < Day.Sat then
+            writeln "   succ = ", toString(succ(d));
+
+        writeln;
+      }
+
+    writeln "... attempting to compute pred(Day.Sun)";
+    day := pred(Day.Sun);
+
+    writeln;
+
+    writeln "... attempting to compute succ(Day.Sat)";
+    day := succ(Day.Sat);
+  }
+
+fun pos(day : Day) : Integer
+  {
+    return posArray[day];
+  }
+
+fun succ(day : Day) : Day
+  {
+    if day < Day.Sat then
+      {
+        for d in Day.Mon..Day.Sat loop
+          {
+            if d > day then
+                return d;
+          }
+      }
+    else
+      {
+        writeln "Can't compute succ(Day.Sat)";
+        return Day.Sat;
+      }
+  }
+
+fun pred(day : Day) : Day
+  {
+    var saveDay: Day := Day.Sun;
+
+    if day > Day.Sun then
+      {
+        for d in Day.Mon..Day.Sat loop
+          {
+            if d < day then
+                saveDay := d;
+          }
+
+        return saveDay;
+      }
+    else
+      {
+        writeln "Can't compute pred(Day.Sun)";
+        return Day.Sun;
+      }
+  }
+
+fun toString(d : Day) : String
+  {
+    return dayNames[d];
+  }

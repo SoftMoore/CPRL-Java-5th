@@ -1,0 +1,70 @@
+   CALL _main
+   HALT
+_main:
+   PROC 12
+   LDLADDR 8
+   LDCINT 1
+   STOREW
+L0:
+   LDLADDR 8
+   LOADW
+   LDCINT 10
+   BG L1
+   LDLADDR 8
+   LOADW
+   PUTINT
+   LDCSTR " "
+   PUTSTR
+   LDLADDR 8
+   LDLADDR 8
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   PUTEOL
+   LDLADDR 12
+   LDCINT 10
+   NEG
+   STOREW
+L2:
+   LDLADDR 12
+   LOADW
+   LDCINT 1
+   NEG
+   BG L3
+   LDLADDR 12
+   LOADW
+   PUTINT
+   LDCSTR " "
+   PUTSTR
+   LDLADDR 12
+   LDLADDR 12
+   LOADW
+   INC
+   STOREW
+   BR L2
+L3:
+   PUTEOL
+   LDLADDR 16
+   LDCINT -10
+   STOREW
+L4:
+   LDLADDR 16
+   LOADW
+   LDCINT -1
+   BG L5
+   LDLADDR 16
+   LOADW
+   PUTINT
+   LDCSTR " "
+   PUTSTR
+   LDLADDR 16
+   LDLADDR 16
+   LOADW
+   INC
+   STOREW
+   BR L4
+L5:
+   PUTEOL
+   RET 0

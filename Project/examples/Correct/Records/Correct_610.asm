@@ -1,0 +1,47 @@
+   CALL _main
+   HALT
+_main:
+   PROC 12
+   LDLADDR 8
+   LDCINT 0
+   LDCINT 5
+   STORE 8
+   LDCSTR "Range("
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   PUTINT
+   LDCSTR ".."
+   PUTSTR
+   LDLADDR 8
+   LDCINT 4
+   ADD
+   LOADW
+   PUTINT
+   LDCSTR ")"
+   PUTSTR
+   PUTEOL
+   LDLADDR 16
+   LDLADDR 8
+   LOADW
+   STOREW
+L0:
+   LDLADDR 16
+   LOADW
+   LDLADDR 8
+   LDCINT 4
+   ADD
+   LOADW
+   BG L1
+   LDLADDR 16
+   LOADW
+   PUTINT
+   PUTEOL
+   LDLADDR 16
+   LDLADDR 16
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   RET 0

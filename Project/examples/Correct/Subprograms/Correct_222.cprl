@@ -1,0 +1,13 @@
+// Test user-defined function named inc() should not be a problem.
+
+proc main()
+  {
+    var n : Integer := 12;
+    writeln inc(n);
+  }
+
+// user-defined inc() function
+fun inc(n : Integer) : Integer
+  {
+    return n + 1;
+  }

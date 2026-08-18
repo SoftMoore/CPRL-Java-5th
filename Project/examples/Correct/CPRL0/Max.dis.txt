@@ -1,0 +1,40 @@
+   0:  PROGRAM 8
+   5:  CALL 1
+  10:  HALT
+  11:  LDCSTR "Enter two integer values.  Enter two zeros to exit."
+ 118:  PUTSTR
+ 119:  PUTEOL
+ 120:  LDGADDR 0
+ 125:  GETINT
+ 126:  LDGADDR 4
+ 131:  GETINT
+ 132:  LDGADDR 0
+ 137:  LOADW
+ 138:  LDCINT0
+ 139:  BE 6
+ 144:  LDCB0
+ 145:  BR 19
+ 150:  LDGADDR 4
+ 155:  LOADW
+ 156:  LDCINT0
+ 157:  BNE 6
+ 162:  LDCB1
+ 163:  BR 1
+ 168:  LDCB0
+ 169:  BNZ 97
+ 174:  LDCSTR "max of the two values is "
+ 229:  PUTSTR
+ 230:  LDGADDR 0
+ 235:  LOADW
+ 236:  LDGADDR 4
+ 241:  LOADW
+ 242:  BLE 11
+ 247:  LDGADDR 0
+ 252:  LOADW
+ 253:  BR 6
+ 258:  LDGADDR 4
+ 263:  LOADW
+ 264:  PUTINT
+ 265:  PUTEOL
+ 266:  BR -260
+ 271:  RET0

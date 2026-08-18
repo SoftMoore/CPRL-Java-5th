@@ -1,0 +1,138 @@
+   CALL _main
+   HALT
+_main:
+   LDCSTR "25/10 = "
+   PUTSTR
+   ALLOC 4
+   LDCINT 25
+   LDCINT 10
+   CALL _divide
+   PUTINT
+   PUTEOL
+   LDCSTR "25 mod 10 = "
+   PUTSTR
+   ALLOC 4
+   LDCINT 25
+   LDCINT 10
+   CALL _modulo
+   PUTINT
+   PUTEOL
+   LDCSTR "19/10 = "
+   PUTSTR
+   ALLOC 4
+   LDCINT 19
+   LDCINT 10
+   CALL _divide
+   PUTINT
+   PUTEOL
+   LDCSTR "19 mod 10 = "
+   PUTSTR
+   ALLOC 4
+   LDCINT 19
+   LDCINT 10
+   CALL _modulo
+   PUTINT
+   PUTEOL
+   LDCSTR "13/2 = "
+   PUTSTR
+   ALLOC 4
+   LDCINT 13
+   LDCINT 2
+   CALL _divide
+   PUTINT
+   PUTEOL
+   LDCSTR "13 mod 2 = "
+   PUTSTR
+   ALLOC 4
+   LDCINT 13
+   LDCINT 2
+   CALL _modulo
+   PUTINT
+   PUTEOL
+   RET 0
+_divide:
+   PROC 4
+   LDLADDR 8
+   LDCINT 0
+   STOREW
+   LDLADDR -4
+   LOADW
+   LDCINT 0
+   BNE L2
+   LDCSTR "*** Error: division by 0 ***"
+   PUTSTR
+   PUTEOL
+   LDLADDR -12
+   LDCINT 2147483647
+   STOREW
+   RET 8
+L2:
+L6:
+   LDLADDR -8
+   LOADW
+   LDLADDR -4
+   LOADW
+   BL L7
+   LDLADDR -8
+   LDLADDR -8
+   LOADW
+   LDLADDR -4
+   LOADW
+   SUB
+   STOREW
+   LDLADDR 8
+   LDLADDR 8
+   LOADW
+   LDCINT 1
+   ADD
+   STOREW
+   BR L6
+L7:
+   LDLADDR -12
+   LDLADDR 8
+   LOADW
+   STOREW
+   RET 8
+_modulo:
+   PROC 4
+   LDLADDR 8
+   LDCINT 0
+   STOREW
+   LDLADDR -4
+   LOADW
+   LDCINT 0
+   BNE L10
+   LDCSTR "*** Error: division by 0 ***"
+   PUTSTR
+   PUTEOL
+   LDLADDR -12
+   LDCINT 2147483647
+   STOREW
+   RET 8
+L10:
+L14:
+   LDLADDR -8
+   LOADW
+   LDLADDR -4
+   LOADW
+   BL L15
+   LDLADDR -8
+   LDLADDR -8
+   LOADW
+   LDLADDR -4
+   LOADW
+   SUB
+   STOREW
+   LDLADDR 8
+   LDLADDR 8
+   LOADW
+   LDCINT 1
+   ADD
+   STOREW
+   BR L14
+L15:
+   LDLADDR -12
+   LDLADDR -8
+   LOADW
+   STOREW
+   RET 8

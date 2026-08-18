@@ -1,0 +1,44 @@
+const IntBits := 32;    // 32 bits
+
+var HEXCHARS : String := "0123456789ABCDEF";
+
+proc main()
+  {
+    var i : Integer := 0x06A12D0F;
+
+    writeln "i = ", i;
+    write "as a binary string: ";
+    writeBinaryString(i);
+    writeln;
+    write "   as a hex string: ";
+    writeHexString(i);
+    writeln;
+  }
+
+// Writes a binary string representation of the specified integer.
+proc writeBinaryString(n : Integer)
+  {
+    var mask : Integer;
+
+    for i in 0..IntBits - 1 loop
+      {
+        mask := 1 << (IntBits - 1 - i);
+        if n & mask = 0 then
+            write '0';
+        else
+            write '1';
+      }
+  }
+
+// Writes a hexadecimal string representation of the specified integer.
+proc writeHexString(n : Integer)
+  {
+    write HEXCHARS[n >> 28 & 0x0000000F];
+    write HEXCHARS[n >> 24 & 0x0000000F];
+    write HEXCHARS[n >> 20 & 0x0000000F];
+    write HEXCHARS[n >> 16 & 0x0000000F];
+    write HEXCHARS[n >> 12 & 0x0000000F];
+    write HEXCHARS[n >>  8 & 0x0000000F];
+    write HEXCHARS[n >>  4 & 0x0000000F];
+    write HEXCHARS[n       & 0x0000000F];
+  }

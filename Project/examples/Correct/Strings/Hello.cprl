@@ -1,0 +1,11 @@
+const greeting := "Hello, ";
+
+proc main()
+  {
+    var name : String;
+    var greet: String := greeting;
+
+    write "What is your name?  ";
+    read name;
+    writeln greet, name, ".";
+  }

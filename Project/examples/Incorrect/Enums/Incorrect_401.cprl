@@ -1,0 +1,9 @@
+proc main()
+  {
+    type Day = <Sun, Mon, Tue, Wed, Thu, Fri, Sat>;
+    var wDay : Day := Day.Wed;
+
+    writeln "Day number for Sunday is ", Day.Sun;
+    writeln "Day number for Friday is ", Day.Gri;    // Gri is not valid for type Day
+    writeln "Day number for wDay is   ", wDay;
+  }

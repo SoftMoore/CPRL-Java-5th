@@ -1,0 +1,27 @@
+   CALL _main
+   HALT
+_main:
+   PROC 8
+   LDLADDR 8
+   LDCSTR "Moe"
+   STOREW
+   LDLADDR 12
+   LDCSTR "Larry"
+   STOREW
+   LDCSTR "name2 = "
+   PUTSTR
+   LDLADDR 12
+   LOADW
+   PUTSTR
+   PUTEOL
+   LDLADDR 12
+   LDLADDR 8
+   LOADW
+   STOREW
+   LDCSTR "name2 = "
+   PUTSTR
+   LDLADDR 12
+   LOADW
+   PUTSTR
+   PUTEOL
+   RET 0

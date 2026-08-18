@@ -1,0 +1,18 @@
+proc main()
+  {
+    var str1 : String := "Hello, ";
+    var str2 : String;
+    var concatenated : String;
+
+    var firstName : String := "John";
+    var lastName  : String := "Moore";
+    var fullName  : String;
+
+    str2 := "world.";
+    concatenated := str1 + str2;
+    writeln "\"", str1, "\" concatenated with \"", str2, "\" is \"", concatenated, "\"";
+    writeln "\"", str1, "\" concatenated with \"", str2, "\" is \"", str1 + str2,  "\"";
+
+    fullName := firstName + " " + lastName;
+    writeln "full name is ", fullName;
+  }

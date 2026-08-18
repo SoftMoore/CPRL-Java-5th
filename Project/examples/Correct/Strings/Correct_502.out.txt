@@ -1,0 +1,4 @@
+firstName = John
+firstName.length = 4
+firstName[2] = h
+firstName written one character at a time: John

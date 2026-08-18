@@ -1,0 +1,194 @@
+   PROGRAM 4
+   LDGADDR 0
+   LDCSTR "0123456789ABCDEF"
+   STOREW
+   CALL _main
+   HALT
+_main:
+   PROC 4
+   LDLADDR 8
+   LDCINT 111226127
+   STOREW
+   LDCSTR "i = "
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   PUTINT
+   PUTEOL
+   LDCSTR "as a binary string: "
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   CALL _writeBinaryString
+   PUTEOL
+   LDCSTR "   as a hex string: "
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   CALL _writeHexString
+   PUTEOL
+   RET 0
+_writeBinaryString:
+   PROC 8
+   LDLADDR 12
+   LDCINT 0
+   STOREW
+L0:
+   LDLADDR 12
+   LOADW
+   LDCINT 32
+   LDCINT 1
+   SUB
+   BG L1
+   LDLADDR 8
+   LDCINT 1
+   LDCINT 32
+   LDCINT 1
+   SUB
+   LDLADDR 12
+   LOADW
+   SUB
+   SHL
+   STOREW
+   LDLADDR -4
+   LOADW
+   LDLADDR 8
+   LOADW
+   BITAND
+   LDCINT 0
+   BNE L4
+   LDCCH '0'
+   PUTCH
+   BR L5
+L4:
+   LDCCH '1'
+   PUTCH
+L5:
+   LDLADDR 12
+   LDLADDR 12
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   RET 4
+_writeHexString:
+   LDGADDR 0
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 28
+   SHR
+   LDCINT 15
+   BITAND
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDGADDR 0
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 24
+   SHR
+   LDCINT 15
+   BITAND
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDGADDR 0
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 20
+   SHR
+   LDCINT 15
+   BITAND
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDGADDR 0
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 16
+   SHR
+   LDCINT 15
+   BITAND
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDGADDR 0
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 12
+   SHR
+   LDCINT 15
+   BITAND
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDGADDR 0
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 8
+   SHR
+   LDCINT 15
+   BITAND
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDGADDR 0
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 4
+   SHR
+   LDCINT 15
+   BITAND
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDGADDR 0
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 15
+   BITAND
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   RET 4

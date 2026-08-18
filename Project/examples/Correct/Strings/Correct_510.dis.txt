@@ -1,0 +1,16 @@
+   0:  CALL 21
+   5:  HALT
+   6:  LDLADDR -4
+  11:  LDCSTR "Gaby"
+  24:  STOREW
+  25:  RET0
+  26:  PROC 4
+  31:  LDLADDR 8
+  36:  ALLOC 4
+  41:  CALL -40
+  46:  STOREW
+  47:  LDLADDR 8
+  52:  LOADW
+  53:  PUTSTR
+  54:  PUTEOL
+  55:  RET0

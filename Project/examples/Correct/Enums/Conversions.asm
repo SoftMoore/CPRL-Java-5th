@@ -1,0 +1,218 @@
+   PROGRAM 56
+   LDGADDR 0
+   LDCINT 0
+   LDCINT 1
+   LDCINT 2
+   LDCINT 3
+   LDCINT 4
+   LDCINT 5
+   LDCINT 6
+   STORE 28
+   LDGADDR 28
+   LDCSTR "Sun"
+   LDCSTR "Mon"
+   LDCSTR "Tue"
+   LDCSTR "Wed"
+   LDCSTR "Thu"
+   LDCSTR "Fri"
+   LDCSTR "Sat"
+   STORE 28
+   CALL _main
+   HALT
+_main:
+   PROC 8
+   LDLADDR 12
+   LDCINT 0
+   STOREW
+L0:
+   LDLADDR 12
+   LOADW
+   LDCINT 6
+   BG L1
+   LDCSTR "for "
+   PUTSTR
+   ALLOC 4
+   LDLADDR 12
+   LOADW
+   CALL _toString
+   PUTSTR
+   LDCSTR ":"
+   PUTSTR
+   PUTEOL
+   LDCSTR "    pos = "
+   PUTSTR
+   ALLOC 4
+   LDLADDR 12
+   LOADW
+   CALL _pos
+   PUTINT
+   PUTEOL
+   LDLADDR 12
+   LOADW
+   LDCINT 0
+   BLE L4
+   LDCSTR "   pred = "
+   PUTSTR
+   ALLOC 4
+   ALLOC 4
+   LDLADDR 12
+   LOADW
+   CALL _pred
+   CALL _toString
+   PUTSTR
+   PUTEOL
+L4:
+   LDLADDR 12
+   LOADW
+   LDCINT 6
+   BGE L8
+   LDCSTR "   succ = "
+   PUTSTR
+   ALLOC 4
+   ALLOC 4
+   LDLADDR 12
+   LOADW
+   CALL _succ
+   CALL _toString
+   PUTSTR
+   PUTEOL
+L8:
+   PUTEOL
+   LDLADDR 12
+   LDLADDR 12
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   LDCSTR "... attempting to compute pred(Day.Sun)"
+   PUTSTR
+   PUTEOL
+   LDLADDR 8
+   ALLOC 4
+   LDCINT 0
+   CALL _pred
+   STOREW
+   PUTEOL
+   LDCSTR "... attempting to compute succ(Day.Sat)"
+   PUTSTR
+   PUTEOL
+   LDLADDR 8
+   ALLOC 4
+   LDCINT 6
+   CALL _succ
+   STOREW
+   RET 0
+_pos:
+   LDLADDR -8
+   LDGADDR 0
+   LDLADDR -4
+   LOADW
+   LDCINT 4
+   MUL
+   ADD
+   LOADW
+   STOREW
+   RET 4
+_succ:
+   PROC 4
+   LDLADDR -4
+   LOADW
+   LDCINT 6
+   BGE L18
+   LDLADDR 8
+   LDCINT 1
+   STOREW
+L12:
+   LDLADDR 8
+   LOADW
+   LDCINT 6
+   BG L13
+   LDLADDR 8
+   LOADW
+   LDLADDR -4
+   LOADW
+   BLE L16
+   LDLADDR -8
+   LDLADDR 8
+   LOADW
+   STOREW
+   RET 4
+L16:
+   LDLADDR 8
+   LDLADDR 8
+   LOADW
+   INC
+   STOREW
+   BR L12
+L13:
+   BR L19
+L18:
+   LDCSTR "Can't compute succ(Day.Sat)"
+   PUTSTR
+   PUTEOL
+   LDLADDR -8
+   LDCINT 6
+   STOREW
+   RET 4
+L19:
+_pred:
+   PROC 8
+   LDLADDR 8
+   LDCINT 0
+   STOREW
+   LDLADDR -4
+   LOADW
+   LDCINT 0
+   BLE L28
+   LDLADDR 12
+   LDCINT 1
+   STOREW
+L22:
+   LDLADDR 12
+   LOADW
+   LDCINT 6
+   BG L23
+   LDLADDR 12
+   LOADW
+   LDLADDR -4
+   LOADW
+   BGE L26
+   LDLADDR 8
+   LDLADDR 12
+   LOADW
+   STOREW
+L26:
+   LDLADDR 12
+   LDLADDR 12
+   LOADW
+   INC
+   STOREW
+   BR L22
+L23:
+   LDLADDR -8
+   LDLADDR 8
+   LOADW
+   STOREW
+   RET 4
+   BR L29
+L28:
+   LDCSTR "Can't compute pred(Day.Sun)"
+   PUTSTR
+   PUTEOL
+   LDLADDR -8
+   LDCINT 0
+   STOREW
+   RET 4
+L29:
+_toString:
+   LDLADDR -8
+   LDGADDR 28
+   LDLADDR -4
+   LOADW
+   LDCINT 4
+   MUL
+   ADD
+   LOADW
+   STOREW
+   RET 4

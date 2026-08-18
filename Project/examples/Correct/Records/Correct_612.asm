@@ -1,0 +1,356 @@
+   PROGRAM 104
+   LDGADDR 0
+   LDCSTR "invalid"
+   LDCSTR "January"
+   LDCSTR "February"
+   LDCSTR "March"
+   LDCSTR "April"
+   LDCSTR "May"
+   LDCSTR "June"
+   LDCSTR "July"
+   LDCSTR "August"
+   LDCSTR "September"
+   LDCSTR "October"
+   LDCSTR "November"
+   LDCSTR "December"
+   STORE 52
+   LDGADDR 52
+   LDCINT 0
+   LDCINT 31
+   LDCINT 28
+   LDCINT 31
+   LDCINT 30
+   LDCINT 31
+   LDCINT 30
+   LDCINT 31
+   LDCINT 31
+   LDCINT 30
+   LDCINT 31
+   LDCINT 30
+   LDCINT 31
+   STORE 52
+   CALL _main
+   HALT
+_isLeapYear:
+   LDLADDR -4
+   LOADW
+   LDCINT 4
+   MOD
+   LDCINT 0
+   BE L10
+   LDLADDR -5
+   LDCB 0
+   STOREB
+   RET 4
+   BR L11
+L10:
+   LDLADDR -4
+   LOADW
+   LDCINT 400
+   MOD
+   LDCINT 0
+   BNE L8
+   LDLADDR -5
+   LDCB 1
+   STOREB
+   RET 4
+   BR L9
+L8:
+   LDLADDR -4
+   LOADW
+   LDCINT 100
+   MOD
+   LDCINT 0
+   BNE L6
+   LDLADDR -5
+   LDCB 0
+   STOREB
+   RET 4
+   BR L7
+L6:
+   LDLADDR -5
+   LDCB 1
+   STOREB
+   RET 4
+L7:
+L9:
+L11:
+_maxDaysInMonth:
+   LDLADDR -8
+   LOADW
+   LDCINT 2
+   BE L14
+   LDCB 0
+   BR L15
+L14:
+   ALLOC 1
+   LDLADDR -4
+   LOADW
+   CALL _isLeapYear
+L15:
+   BZ L16
+   LDLADDR -12
+   LDGADDR 52
+   LDLADDR -8
+   LOADW
+   LDCINT 4
+   MUL
+   ADD
+   LOADW
+   LDCINT 1
+   ADD
+   STOREW
+   RET 8
+   BR L17
+L16:
+   LDLADDR -12
+   LDGADDR 52
+   LDLADDR -8
+   LOADW
+   LDCINT 4
+   MUL
+   ADD
+   LOADW
+   STOREW
+   RET 8
+L17:
+_isValidDate:
+   LDLADDR -12
+   LDCINT 8
+   ADD
+   LOADW
+   LDCINT 0
+   BGE L22
+   LDCB 1
+   BR L23
+L22:
+   LDLADDR -12
+   LDCINT 8
+   ADD
+   LOADW
+   LDCINT 5000
+   BLE L20
+   LDCB 1
+   BR L21
+L20:
+   LDCB 0
+L21:
+L23:
+   BZ L24
+   LDLADDR -13
+   LDCB 0
+   STOREB
+   RET 12
+L24:
+   LDLADDR -12
+   LDCINT 4
+   ADD
+   LOADW
+   LDCINT 1
+   BGE L30
+   LDCB 1
+   BR L31
+L30:
+   LDLADDR -12
+   LDCINT 4
+   ADD
+   LOADW
+   LDCINT 12
+   BLE L28
+   LDCB 1
+   BR L29
+L28:
+   LDCB 0
+L29:
+L31:
+   BZ L32
+   LDLADDR -13
+   LDCB 0
+   STOREB
+   RET 12
+L32:
+   LDLADDR -12
+   LOADW
+   LDCINT 1
+   BGE L38
+   LDCB 1
+   BR L39
+L38:
+   LDLADDR -12
+   LOADW
+   ALLOC 4
+   LDLADDR -12
+   LDCINT 4
+   ADD
+   LOADW
+   LDLADDR -12
+   LDCINT 8
+   ADD
+   LOADW
+   CALL _maxDaysInMonth
+   BLE L36
+   LDCB 1
+   BR L37
+L36:
+   LDCB 0
+L37:
+L39:
+   BZ L40
+   LDLADDR -13
+   LDCB 0
+   STOREB
+   RET 12
+L40:
+   LDLADDR -13
+   LDCB 1
+   STOREB
+   RET 12
+_checkDate:
+   LDLADDR -12
+   LOAD 12
+   CALL _writeDate
+   ALLOC 1
+   LDLADDR -12
+   LOAD 12
+   CALL _isValidDate
+   BZ L42
+   LDCSTR " is a valid date."
+   PUTSTR
+   PUTEOL
+   BR L43
+L42:
+   LDCSTR " is not a valid date."
+   PUTSTR
+   PUTEOL
+L43:
+   RET 12
+_writeDate:
+   ALLOC 1
+   LDLADDR -12
+   LOAD 12
+   CALL _isValidDate
+   NOT
+   BZ L44
+   LDLADDR -12
+   LOADW
+   PUTINT
+   LDCSTR "-"
+   PUTSTR
+   LDLADDR -12
+   LDCINT 4
+   ADD
+   LOADW
+   PUTINT
+   LDCSTR "-"
+   PUTSTR
+   LDLADDR -12
+   LDCINT 8
+   ADD
+   LOADW
+   PUTINT
+   LDCSTR " is not a valid date"
+   PUTSTR
+   BR L45
+L44:
+   LDGADDR 0
+   LDLADDR -12
+   LDCINT 4
+   ADD
+   LOADW
+   LDCINT 4
+   MUL
+   ADD
+   LOADW
+   PUTSTR
+   LDCSTR " "
+   PUTSTR
+   LDLADDR -12
+   LOADW
+   PUTINT
+   LDCSTR ", "
+   PUTSTR
+   LDLADDR -12
+   LDCINT 8
+   ADD
+   LOADW
+   PUTINT
+L45:
+   RET 12
+_main:
+   PROC 80
+   LDLADDR 8
+   LDCINT 15
+   LDCINT 7
+   LDCINT 2021
+   LDCINT 1
+   LDCINT 1
+   LDCINT 2026
+   LDCINT 31
+   LDCINT 12
+   LDCINT 2025
+   LDCINT 25
+   LDCINT 5
+   LDCINT 1958
+   LDCINT 15
+   LDCINT 13
+   LDCINT 2021
+   LDCINT 29
+   LDCINT 2
+   LDCINT 2024
+   STORE 72
+   LDCSTR "Dates:"
+   PUTSTR
+   PUTEOL
+   LDLADDR 80
+   LDCINT 0
+   STOREW
+L46:
+   LDLADDR 80
+   LOADW
+   LDCINT 5
+   BG L47
+   LDLADDR 8
+   LDLADDR 80
+   LOADW
+   LDCINT 12
+   MUL
+   ADD
+   LOAD 12
+   CALL _writeDate
+   PUTEOL
+   LDLADDR 80
+   LDLADDR 80
+   LOADW
+   INC
+   STOREW
+   BR L46
+L47:
+   PUTEOL
+   LDCSTR "Month names:"
+   PUTSTR
+   PUTEOL
+   LDLADDR 84
+   LDCINT 1
+   STOREW
+L48:
+   LDLADDR 84
+   LOADW
+   LDCINT 12
+   BG L49
+   LDGADDR 0
+   LDLADDR 84
+   LOADW
+   LDCINT 4
+   MUL
+   ADD
+   LOADW
+   PUTSTR
+   PUTEOL
+   LDLADDR 84
+   LDLADDR 84
+   LOADW
+   INC
+   STOREW
+   BR L48
+L49:
+   RET 0

@@ -1,0 +1,24 @@
+// test for-loop with type Byte
+
+proc main()
+  {
+    var start : Byte := 0;
+    var end   : Byte := 9;
+    var b : Byte;
+
+    // the loop variable here is scoped to the loop
+    for b in start..end loop
+        writeln b;
+
+    writeln;
+
+    // The for-loop above is translated to the
+    // equivalent code below using a while loop.
+
+    b := start;
+    while b <= end loop
+      {
+        writeln b;
+        b := b + 1;
+      }
+  }

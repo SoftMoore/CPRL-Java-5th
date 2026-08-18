@@ -1,0 +1,12 @@
+type Day = <Sun, Mon, Tue, Wed, Thu, Fri, Sat>;
+
+var dayNames : array[7] of String
+    := { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+
+proc main()
+  {
+    writeln "Days of the week:";
+
+    for d in Day.Sun..Day.Sat loop
+        writeln dayNames[d];
+  }

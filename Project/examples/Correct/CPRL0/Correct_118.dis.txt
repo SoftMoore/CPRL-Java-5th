@@ -1,0 +1,9 @@
+   0:  CALL 1
+   5:  HALT
+   6:  LDCSTR "string with \\n: \nremaining text."
+  75:  PUTSTR
+  76:  PUTEOL
+  77:  LDCSTR "string with \\t: \tremaining text."
+ 146:  PUTSTR
+ 147:  PUTEOL
+ 148:  RET0

@@ -1,0 +1,5 @@
+proc main()
+  {
+    var name : String := "Joe";
+    name[0] := 'M';             // can't modify characters in a string
+  }

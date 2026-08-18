@@ -1,0 +1,181 @@
+   CALL _main
+   HALT
+_main:
+   PROC 12
+   LDCSTR "Enter an empty string to exit."
+   PUTSTR
+   PUTEOL
+L0:
+   LDCSTR "First string?   "
+   PUTSTR
+   LDLADDR 8
+   GETSTR
+   LDLADDR 8
+   LOADW
+   LOADW
+   LDCINT 0
+   BE L1
+   LDCSTR "Second string?  "
+   PUTSTR
+   LDLADDR 12
+   GETSTR
+   LDLADDR 16
+   ALLOC 4
+   LDLADDR 8
+   LOADW
+   LDLADDR 12
+   LOADW
+   CALL _strcmp
+   STOREW
+   LDLADDR 16
+   LOADW
+   LDCINT 0
+   BGE L10
+   LDLADDR 8
+   LOADW
+   PUTSTR
+   LDCSTR " is less than "
+   PUTSTR
+   LDLADDR 12
+   LOADW
+   PUTSTR
+   PUTEOL
+   BR L11
+L10:
+   LDLADDR 16
+   LOADW
+   LDCINT 0
+   BLE L8
+   LDLADDR 8
+   LOADW
+   PUTSTR
+   LDCSTR " is greater than "
+   PUTSTR
+   LDLADDR 12
+   LOADW
+   PUTSTR
+   PUTEOL
+   BR L9
+L8:
+   LDLADDR 8
+   LOADW
+   PUTSTR
+   LDCSTR " is equal to "
+   PUTSTR
+   LDLADDR 12
+   LOADW
+   PUTSTR
+   PUTEOL
+L9:
+L11:
+   PUTEOL
+   BR L0
+L1:
+   RET 0
+_strcmp:
+   PROC 8
+   LDLADDR 8
+   LDLADDR -8
+   LOADW
+   LOADW
+   STOREW
+   LDLADDR -4
+   LOADW
+   LOADW
+   LDLADDR -8
+   LOADW
+   LOADW
+   BGE L14
+   LDLADDR 8
+   LDLADDR -4
+   LOADW
+   LOADW
+   STOREW
+L14:
+   LDLADDR 12
+   LDCINT 0
+   STOREW
+L16:
+   LDLADDR 12
+   LOADW
+   LDLADDR 8
+   LOADW
+   LDCINT 1
+   SUB
+   BG L17
+   LDLADDR -8
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR 12
+   LOADW
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   CHAR2INT
+   LDLADDR -4
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR 12
+   LOADW
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   CHAR2INT
+   BGE L24
+   LDLADDR -12
+   LDCINT 1
+   NEG
+   STOREW
+   RET 8
+   BR L25
+L24:
+   LDLADDR -8
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR 12
+   LOADW
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   CHAR2INT
+   LDLADDR -4
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR 12
+   LOADW
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   CHAR2INT
+   BLE L22
+   LDLADDR -12
+   LDCINT 1
+   STOREW
+   RET 8
+L22:
+L25:
+   LDLADDR 12
+   LDLADDR 12
+   LOADW
+   INC
+   STOREW
+   BR L16
+L17:
+   LDLADDR -12
+   LDLADDR -8
+   LOADW
+   LOADW
+   LDLADDR -4
+   LOADW
+   LOADW
+   SUB
+   STOREW
+   RET 8

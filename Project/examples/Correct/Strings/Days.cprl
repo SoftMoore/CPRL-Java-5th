@@ -1,0 +1,18 @@
+type Day = <Sun, Mon, Tue, Wed, Thr, Fri, Sat>;
+
+var dayNames : array[7] of String :=
+  { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+
+proc main()
+  {
+    for d in Day.Sun..Day.Sat loop
+        if isWeekDay(d) then
+            writeln dayNames[d], " is a weekday";
+        else
+            writeln dayNames[d], " is not a weekday";
+  }
+
+fun isWeekDay(d : Day) : Boolean
+  {
+    return d >= Day.Mon and d <= Day.Fri;
+  }

@@ -1,0 +1,25 @@
+   CALL _main
+   HALT
+_main:
+   PROC 21
+   LDLADDR 8
+   LDCINT 0
+   LDCINT 1
+   LDCINT 2
+   LDCINT 3
+   LDCINT 4
+   STORE 20
+   LDLADDR 28
+   LDCB 3
+   STOREB
+   LDLADDR 8
+   LDLADDR 28
+   LOADB
+   BYTE2INT
+   LDCINT 4
+   MUL
+   ADD
+   LOADW
+   PUTINT
+   PUTEOL
+   RET 0

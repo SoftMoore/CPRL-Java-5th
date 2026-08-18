@@ -1,0 +1,21 @@
+   0:  PROGRAM 8
+   5:  CALL 1
+  10:  HALT
+  11:  LDCSTR "Enter value for x: "
+  54:  PUTSTR
+  55:  LDGADDR 0
+  60:  GETINT
+  61:  LDCSTR "Enter value for y: "
+ 104:  PUTSTR
+ 105:  LDGADDR 4
+ 110:  GETINT
+ 111:  LDCSTR "x + y = "
+ 132:  PUTSTR
+ 133:  LDGADDR 0
+ 138:  LOADW
+ 139:  LDGADDR 4
+ 144:  LOADW
+ 145:  ADD
+ 146:  PUTINT
+ 147:  PUTEOL
+ 148:  RET0

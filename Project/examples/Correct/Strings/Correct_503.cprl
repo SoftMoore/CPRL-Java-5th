@@ -1,0 +1,17 @@
+proc main()
+  {
+    var firstName : String := "John";
+
+    writeln "Hello, ", firstName, ".";
+
+    write "Hello, ";
+    writeName(firstName);
+    writeln ".";
+  }
+
+proc writeName(n : String)
+  {
+    for i in 0..n.length - 1 loop
+        write n[i];
+  }
+

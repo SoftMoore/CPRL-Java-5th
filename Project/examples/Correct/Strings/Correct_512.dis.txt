@@ -1,0 +1,23 @@
+   0:  CALL 1
+   5:  HALT
+   6:  PROC 8
+  11:  LDLADDR 8
+  16:  LDCSTR "Bill"
+  29:  STOREW
+  30:  LDCSTR "name1 is "
+  53:  PUTSTR
+  54:  LDLADDR 8
+  59:  LOADW
+  60:  PUTSTR
+  61:  PUTEOL
+  62:  LDLADDR 12
+  67:  LDLADDR 8
+  72:  LOADW
+  73:  STOREW
+  74:  LDCSTR "name2 is "
+  97:  PUTSTR
+  98:  LDLADDR 12
+ 103:  LOADW
+ 104:  PUTSTR
+ 105:  PUTEOL
+ 106:  RET0

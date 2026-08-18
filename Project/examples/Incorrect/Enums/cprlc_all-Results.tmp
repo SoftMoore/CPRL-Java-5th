@@ -1,0 +1,32 @@
+Starting compilation for Incorrect_401.cprl
+...parsing
+*** Syntax error detected near line 7, character 46:
+    "Gri" is not a valid named constant for enum type Day
+Errors detected in Incorrect_401.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_402.cprl
+...parsing
+*** Syntax error detected near line 1, character 48:
+    Identifier "Mon" is already defined in the current scope.
+*** Syntax error detected near line 1, character 53:
+    Identifier "Wed" is already defined in the current scope.
+Errors detected in Incorrect_402.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_403.cprl
+...parsing
+...checking constraints
+*** Constraint error detected near line 8, character 7:
+    Type mismatch for assignment statement.
+*** Constraint error detected near line 9, character 7:
+    Type mismatch for assignment statement.
+Errors detected in Incorrect_403.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_404.cprl
+...parsing
+...checking constraints
+*** Constraint error detected near line 9, character 7:
+    Type mismatch for assignment statement.
+*** Constraint error detected near line 10, character 7:
+    Type mismatch for assignment statement.
+Errors detected in Incorrect_404.cprl -- compilation terminated.
+

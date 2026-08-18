@@ -1,0 +1,12 @@
+proc main()
+  {
+    var name : String;
+    name := "Johnny";
+    writeName(name);
+  }
+
+
+proc writeName(name : string)   // string should be String
+  {
+    writeln "name = ", name;
+  }

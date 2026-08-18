@@ -1,0 +1,20 @@
+   0:  CALL 1
+   5:  HALT
+   6:  PROC 1
+  11:  LDLADDR 8
+  16:  GETBYTE
+  17:  ALLOC 1
+  22:  CALL 21
+  27:  BNZ 15
+  32:  LDLADDR 8
+  37:  LOADB
+  38:  BYTE2INT
+  39:  BYTE2INT
+  40:  PUTINT
+  41:  PUTEOL
+  42:  BR -36
+  47:  RET0
+  48:  LDLADDR -1
+  53:  GETEOF
+  54:  STOREB
+  55:  RET0

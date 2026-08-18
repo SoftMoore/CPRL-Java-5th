@@ -1,0 +1,57 @@
+   CALL _main
+   HALT
+_main:
+   PROC 4
+   LDLADDR 8
+   LDCSTR "John"
+   STOREW
+   LDCSTR "Hello, "
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   PUTSTR
+   LDCSTR "."
+   PUTSTR
+   PUTEOL
+   LDCSTR "Hello, "
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   CALL _writeName
+   LDCSTR "."
+   PUTSTR
+   PUTEOL
+   RET 0
+_writeName:
+   PROC 4
+   LDLADDR 8
+   LDCINT 0
+   STOREW
+L0:
+   LDLADDR 8
+   LOADW
+   LDLADDR -4
+   LOADW
+   LOADW
+   LDCINT 1
+   SUB
+   BG L1
+   LDLADDR -4
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR 8
+   LOADW
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDLADDR 8
+   LDLADDR 8
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   RET 4

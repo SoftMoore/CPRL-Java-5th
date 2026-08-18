@@ -1,0 +1,43 @@
+// test type Byte
+
+var n : Integer;
+var b, b1, b2 : Byte;
+
+proc main()
+  {
+    b := 12;
+    n := b;
+    writeln "b = ", b, ", n = ", n;
+
+    b := 255;
+    n := b;
+    writeln "b = ", b, ", n = ", n;
+
+    b := b + 1;
+    n := b;
+    writeln "b = ", b, ", n = ", n;
+
+    n := 501;
+    b := n;
+    writeln "b = ", b, ", n = ", n;
+
+    b1 := -1;
+    b2 := b1 + 2;
+    writeln "b1 = ", b1, ", b2 = ", b2;
+
+    b1 := 8;
+    b2 := ~b1;
+    writeln "b1 = ", b1, ", b2 = ", b2;
+
+    b1 := 8;
+    b2 := 3*b1;
+    writeln "b1 = ", b1, ", b2 = ", b2;
+
+    b1 := 8;
+    b2 := b1 << 2;
+    writeln "b1 = ", b1, ", b2 = ", b2;
+
+    b1 := 31;
+    b2 := b1 - 2;
+    writeln "b1 = ", b1, ", b2 = ", b2;
+  }

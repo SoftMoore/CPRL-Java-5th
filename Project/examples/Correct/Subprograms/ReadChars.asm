@@ -1,0 +1,29 @@
+   CALL _main
+   HALT
+_main:
+   PROC 2
+L0:
+   LDLADDR 8
+   GETCH
+   ALLOC 1
+   CALL _eof
+   BNZ L1
+   LDLADDR 8
+   LOAD2B
+   CHAR2INT
+   LDCCH '\r'
+   CHAR2INT
+   BE L4
+   LDLADDR 8
+   LOAD2B
+   PUTCH
+   PUTEOL
+L4:
+   BR L0
+L1:
+   RET 0
+_eof:
+   LDLADDR -1
+   GETEOF
+   STOREB
+   RET0

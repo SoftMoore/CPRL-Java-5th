@@ -1,0 +1,7 @@
+The input file ReadBytes.in.txt is not really a "text" file.  It was created
+by copying/renaming the object code file ReadBytes.obj.  Assuming no changes
+to the compiler or CVM since the file was created, you should be able to get
+the same output by running the command shown below, but the script files used
+for testing look for a file named ReadBytes.in.txt.
+
+    cprl ReadBytes < ReadBytes.obj

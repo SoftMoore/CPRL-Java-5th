@@ -1,0 +1,5 @@
+proc main()
+  {
+    var firstName : String := "John";
+    writeln "Hello, ", firstName, ".";
+  }

@@ -1,0 +1,49 @@
+// implementing division and mod via repeated subtractions
+
+proc main()
+  {
+    writeln "25/10 = ",     divide(25, 10);
+    writeln "25 mod 10 = ", modulo(25, 10);
+    writeln "19/10 = ",     divide(19, 10);
+    writeln "19 mod 10 = ", modulo(19, 10);
+    writeln "13/2 = ",      divide(13, 2);
+    writeln "13 mod 2 = ",  modulo(13, 2);
+  }
+
+fun divide(dividend : Integer, divisor : Integer) : Integer
+  {
+    var counter : Integer := 0;
+
+    if divisor = 0 then
+      {
+        writeln "*** Error: division by 0 ***";
+        return 2147483647;   // max value for Integer
+      }
+
+    while dividend >= divisor loop
+      {
+        dividend := dividend - divisor;
+        counter  := counter + 1;
+      }
+
+    return counter;
+  }
+
+fun modulo(dividend : Integer, divisor : Integer) : Integer
+  {
+    var counter : Integer := 0;
+
+    if divisor = 0 then
+      {
+        writeln "*** Error: division by 0 ***";
+        return 2147483647;   // max value for Integer
+      }
+
+    while dividend >= divisor loop
+      {
+        dividend := dividend - divisor;
+        counter  := counter + 1;
+      }
+
+    return dividend;
+  }

@@ -1,0 +1,20 @@
+   0:  CALL 1
+   5:  HALT
+   6:  PROC 8
+  11:  LDLADDR 12
+  16:  LDCSTR "Hello, "
+  35:  STOREW
+  36:  LDCSTR "What is your name?  "
+  81:  PUTSTR
+  82:  LDLADDR 8
+  87:  GETSTR
+  88:  LDLADDR 12
+  93:  LOADW
+  94:  PUTSTR
+  95:  LDLADDR 8
+ 100:  LOADW
+ 101:  PUTSTR
+ 102:  LDCSTR "."
+ 109:  PUTSTR
+ 110:  PUTEOL
+ 111:  RET0

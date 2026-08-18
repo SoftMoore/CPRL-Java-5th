@@ -1,0 +1,32 @@
+// Test builtin conversion functions chr() and ord().
+
+proc main()
+  {
+    var c : Char;
+    var n : Integer;
+
+    check('A', 65);
+    check('3', 51);
+    check('π', 960);
+    check('€', 0x20AC);
+    check('\n', 10);
+  }
+
+proc check(c : Char, n : Integer)
+  {
+    var c2 : Char;
+    var n2 : Integer;
+
+    writeln "Char ", c, " converted to Integer = ", ord(c), '.';
+    writeln "Integer ", n, " converted to Char = ", chr(n), '.';
+    n2 := ord(c);
+    c2 := chr(n2);
+    checkEqualChars(c, c2);
+    writeln;
+  }
+
+proc checkEqualChars(c : Char, c2 : Char)
+  {
+    if c != c2 then
+        writeln "*** Error : c = ", c, ", c2 = ", c2;
+  }

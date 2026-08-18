@@ -1,0 +1,11 @@
+fun getName() : String
+  {
+    return "Gaby";
+  }
+
+proc main()
+  {
+    var name : String;
+    name := getName();
+    writeln(name);
+  }

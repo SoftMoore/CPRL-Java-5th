@@ -1,0 +1,19 @@
+   0:  CALL 1
+   5:  HALT
+   6:  CALL 2
+  11:  PUTEOL
+  12:  RET0
+  13:  PROC 2
+  18:  LDLADDR 8
+  23:  GETCH
+  24:  LDLADDR 8
+  29:  LOAD2B
+  30:  CHAR2INT
+  31:  LDCCH 'E'
+  34:  CHAR2INT
+  35:  BE 5
+  40:  CALL -32
+  45:  LDLADDR 8
+  50:  LOAD2B
+  51:  PUTCH
+  52:  RET0

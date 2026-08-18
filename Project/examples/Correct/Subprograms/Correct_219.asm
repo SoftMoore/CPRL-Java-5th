@@ -1,0 +1,85 @@
+   CALL _main
+   HALT
+_main:
+   PROC 2
+   LDLADDR 8
+   LDCB 0
+   STOREB
+   LDLADDR 9
+   LDCB 9
+   STOREB
+   LDLADDR 8
+   LOADB
+   BYTE2INT
+   LDLADDR 9
+   LOADB
+   BYTE2INT
+   CALL _writeRange1
+   PUTEOL
+   LDLADDR 8
+   LOADB
+   BYTE2INT
+   LDLADDR 9
+   LOADB
+   BYTE2INT
+   CALL _writeRange2
+   RET 0
+_writeRange1:
+   PROC 4
+   LDLADDR 8
+   LDLADDR -2
+   LOADB
+   BYTE2INT
+   STOREW
+L0:
+   LDLADDR 8
+   LOADW
+   LDLADDR -1
+   LOADB
+   BYTE2INT
+   BG L1
+   LDLADDR 8
+   LOADW
+   PUTINT
+   PUTEOL
+   LDLADDR 8
+   LDLADDR 8
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   RET 2
+_writeRange2:
+   PROC 1
+   LDLADDR 8
+   LDLADDR -2
+   LOADB
+   BYTE2INT
+   INT2BYTE
+   STOREB
+L4:
+   LDLADDR 8
+   LOADB
+   BYTE2INT
+   LDLADDR -1
+   LOADB
+   BYTE2INT
+   BG L5
+   LDLADDR 8
+   LOADB
+   BYTE2INT
+   BYTE2INT
+   PUTINT
+   PUTEOL
+   LDLADDR 8
+   LDLADDR 8
+   LOADB
+   BYTE2INT
+   LDCINT 1
+   ADD
+   INT2BYTE
+   STOREB
+   BR L4
+L5:
+   RET 2

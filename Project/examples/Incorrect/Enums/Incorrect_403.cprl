@@ -1,0 +1,10 @@
+type Day = <Sun, Mon, Tue, Wed, Thu, Fri, Sat>;
+
+proc main()
+  {
+    var i : Integer;
+    var d : Day;
+
+    i := Day.Mon;        // can't assign value of type Day to Integer variable
+    d := 4;              // can't assign integer value to variable of type Day
+  }

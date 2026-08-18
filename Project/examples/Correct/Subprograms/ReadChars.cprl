@@ -1,0 +1,20 @@
+// When reading from the command line, signal End-of-File
+//   - Windows: CTRL + Z
+//   - Linux:   CTRL + D
+// End-of-File is automatically detected when input is redirected from a file.
+// Works with text files, as in
+//     cprl ReadChars < ReadChars.cprl
+
+proc main()
+  {
+    var c : Char;
+    loop
+      {
+        read c;
+        exit when eof();
+
+        // skip '\r' to make output consistent across Windows and Linux
+        if c != '\r' then
+            writeln c;
+      }
+  }

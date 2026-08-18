@@ -1,0 +1,31 @@
+// test subprograms with Byte parameters and for-loop Byte range
+
+proc main()
+  {
+    var start : Byte := 0;
+    var end   : Byte := 9;
+
+    writeRange1(start, end);
+    writeln;
+    writeRange2(start, end);
+  }
+
+// write the range values using a for loop
+proc writeRange1(start : Byte, end : Byte)
+  {
+    for b in start..end loop
+        writeln b;
+  }
+
+// write the range values using an equivalent while loop
+proc writeRange2(start : Byte, end : Byte)
+  {
+    var b : Byte;
+
+    b := start;
+    while b <= end loop
+      {
+        writeln b;
+        b := b + 1;
+      }
+  }

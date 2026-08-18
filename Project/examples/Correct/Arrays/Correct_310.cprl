@@ -1,0 +1,11 @@
+// test that byte array can be initialized
+
+type T = array[5] of Byte;
+
+proc main()
+  {
+    var table : T  := { 10, 20, 30, 40, 50 };
+
+    for i in 0..4 loop
+        writeln table[i];
+  }

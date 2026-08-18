@@ -1,0 +1,36 @@
+   CALL _main
+   HALT
+_main:
+   PROC 9
+   LDLADDR 8
+   LDCB 10
+   LDCB 20
+   LDCB 30
+   LDCB 40
+   LDCB 50
+   STORE 5
+   LDLADDR 13
+   LDCINT 0
+   STOREW
+L0:
+   LDLADDR 13
+   LOADW
+   LDCINT 4
+   BG L1
+   LDLADDR 8
+   LDLADDR 13
+   LOADW
+   ADD
+   LOADB
+   BYTE2INT
+   BYTE2INT
+   PUTINT
+   PUTEOL
+   LDLADDR 13
+   LDLADDR 13
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   RET 0

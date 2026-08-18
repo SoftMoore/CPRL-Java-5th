@@ -1,0 +1,23 @@
+   0:  CALL 1
+   5:  HALT
+   6:  ALLOC 4
+  11:  LDCCH 'A'
+  14:  CALL 20
+  19:  PUTINT
+  20:  PUTEOL
+  21:  ALLOC 2
+  26:  LDCINT 65
+  31:  CALL 19
+  36:  PUTCH
+  37:  PUTEOL
+  38:  RET0
+  39:  LDLADDR -6
+  44:  LDCINT 70
+  49:  STOREW
+  50:  RET 2
+  55:  LDLADDR -6
+  60:  LDLADDR -4
+  65:  LOADW
+  66:  INT2CHAR
+  67:  STORE2B
+  68:  RET4

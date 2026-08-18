@@ -1,0 +1,17 @@
+proc main()
+  {
+    var x : Integer;
+
+    loop
+      {
+        write "Enter an integer: ";
+        read x;
+        writeln "abs(", x, ") = ", abs(x);
+        exit when x = 0;
+      }
+  }
+
+fun abs(n : Integer) : Integer
+  {
+    return n >= 0 ? n : -n;
+  }

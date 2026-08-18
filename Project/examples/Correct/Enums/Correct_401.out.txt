@@ -1,0 +1,9 @@
+Day number for var wed is 3
+Day number for Friday is  5
+day number = 0
+day number = 1
+day number = 2
+day number = 3
+day number = 4
+day number = 5
+day number = 6

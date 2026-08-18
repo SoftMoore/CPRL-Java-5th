@@ -1,0 +1,47 @@
+   CALL _main
+   HALT
+_main:
+   PROC 44
+   LDLADDR 8
+   LDCINT 0
+   LDCINT 1
+   LDCINT 2
+   LDCINT 3
+   LDCINT 4
+   LDCINT 5
+   LDCINT 6
+   LDCINT 7
+   LDCINT 8
+   LDCINT 9
+   STORE 40
+   LDCSTR "array: "
+   PUTSTR
+   LDLADDR 48
+   LDCINT 0
+   STOREW
+L0:
+   LDLADDR 48
+   LOADW
+   LDCINT 10
+   LDCINT 1
+   SUB
+   BG L1
+   LDLADDR 8
+   LDLADDR 48
+   LOADW
+   LDCINT 4
+   MUL
+   ADD
+   LOADW
+   PUTINT
+   LDCSTR "  "
+   PUTSTR
+   LDLADDR 48
+   LDLADDR 48
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   PUTEOL
+   RET 0

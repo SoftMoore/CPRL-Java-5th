@@ -1,0 +1,39 @@
+   0:  PROGRAM 28
+   5:  LDGADDR 0
+  10:  LDCSTR "Sunday"
+  27:  LDCSTR "Monday"
+  44:  LDCSTR "Tuesday"
+  63:  LDCSTR "Wednesday"
+  86:  LDCSTR "Thursday"
+ 107:  LDCSTR "Friday"
+ 124:  LDCSTR "Saturday"
+ 145:  STORE 28
+ 150:  CALL 1
+ 155:  HALT
+ 156:  PROC 4
+ 161:  LDCSTR "Days of the week:"
+ 200:  PUTSTR
+ 201:  PUTEOL
+ 202:  LDLADDR 8
+ 207:  LDCINT0
+ 208:  STOREW
+ 209:  LDLADDR 8
+ 214:  LOADW
+ 215:  LDCINT 6
+ 220:  BG 39
+ 225:  LDGADDR 0
+ 230:  LDLADDR 8
+ 235:  LOADW
+ 236:  LDCINT 4
+ 241:  MUL
+ 242:  ADD
+ 243:  LOADW
+ 244:  PUTSTR
+ 245:  PUTEOL
+ 246:  LDLADDR 8
+ 251:  LDLADDR 8
+ 256:  LOADW
+ 257:  INC
+ 258:  STOREW
+ 259:  BR -55
+ 264:  RET0

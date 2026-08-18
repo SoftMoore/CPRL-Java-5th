@@ -1,0 +1,32 @@
+Parsing Incorrect_501.cprl...
+Parsing complete.
+
+Parsing Incorrect_502.cprl...
+*** Syntax error detected near line 4, character 5:
+    Expecting ";" but found "name1" instead.
+Errors detected in Incorrect_502.cprl -- parsing terminated.
+
+Parsing Incorrect_503.cprl...
+*** Syntax error detected near line 3, character 16:
+    Identifier "string" has not been declared as a type.
+Errors detected in Incorrect_503.cprl -- parsing terminated.
+
+Parsing Incorrect_504.cprl...
+*** Syntax error detected near line 9, character 23:
+    Identifier "string" has not been declared as a type.
+Errors detected in Incorrect_504.cprl -- parsing terminated.
+
+Parsing Incorrect_505.cprl...
+Parsing complete.
+
+Parsing Incorrect_506.cprl...
+Parsing complete.
+
+Parsing Incorrect_507.cprl...
+Parsing complete.
+
+Parsing Months.cprl...
+*** Syntax error detected near line 1, character 34:
+    Expecting ";" but found "=" instead.
+Errors detected in Months.cprl -- parsing terminated.
+

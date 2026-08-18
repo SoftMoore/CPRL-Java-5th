@@ -1,0 +1,44 @@
+   0:  PROGRAM 48
+   5:  LDGADDR 0
+  10:  LDCSTR "January"
+  29:  LDCSTR "February"
+  50:  LDCSTR "March"
+  65:  LDCSTR "April"
+  80:  LDCSTR "May"
+  91:  LDCSTR "June"
+ 104:  LDCSTR "July"
+ 117:  LDCSTR "August"
+ 134:  LDCSTR "September"
+ 157:  LDCSTR "October"
+ 176:  LDCSTR "November"
+ 197:  LDCSTR "December"
+ 218:  STORE 48
+ 223:  CALL 1
+ 228:  HALT
+ 229:  PROC 4
+ 234:  LDCSTR "The months are as follows:"
+ 291:  PUTSTR
+ 292:  PUTEOL
+ 293:  LDLADDR 8
+ 298:  LDCINT0
+ 299:  STOREW
+ 300:  LDLADDR 8
+ 305:  LOADW
+ 306:  LDCINT 11
+ 311:  BG 39
+ 316:  LDGADDR 0
+ 321:  LDLADDR 8
+ 326:  LOADW
+ 327:  LDCINT 4
+ 332:  MUL
+ 333:  ADD
+ 334:  LOADW
+ 335:  PUTSTR
+ 336:  PUTEOL
+ 337:  LDLADDR 8
+ 342:  LDLADDR 8
+ 347:  LOADW
+ 348:  INC
+ 349:  STOREW
+ 350:  BR -55
+ 355:  RET0

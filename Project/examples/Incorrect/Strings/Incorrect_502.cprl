@@ -1,0 +1,5 @@
+proc main()
+  {
+    var name1 : String      // missing semicolon
+    name1 := "Johnny";
+  }

@@ -1,0 +1,13 @@
+proc main()
+  {
+    var firstName : String := "John";
+
+    writeln "firstName = ", firstName;
+    writeln "firstName.length = ", firstName.length;
+    writeln "firstName[2] = ", firstName[2];
+    write "firstName written one character at a time: ";
+    for i in 0..firstName.length - 1 loop
+        write firstName[i];
+    writeln;
+  }
+

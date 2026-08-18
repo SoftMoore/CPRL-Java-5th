@@ -1,0 +1,17 @@
+   0:  PROGRAM 4
+   5:  CALL 1
+  10:  HALT
+  11:  LDCSTR "Enter value for x: "
+  54:  PUTSTR
+  55:  LDGADDR 0
+  60:  GETINT
+  61:  LDGADDR 0
+  66:  LOADW
+  67:  LDCINT 5
+  72:  BG 6
+  77:  LDCB1
+  78:  BR 1
+  83:  LDCB0
+  84:  BYTE2INT
+  85:  PUTINT
+  86:  RET0

@@ -1,0 +1,7 @@
+Sunday is not a weekday
+Monday is a weekday
+Tuesday is a weekday
+Wednesday is a weekday
+Thursday is a weekday
+Friday is a weekday
+Saturday is not a weekday

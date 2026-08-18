@@ -1,0 +1,11 @@
+// Identifier Day is allowed as both an enum type name and
+// an emum constant since the names have different scopes.
+
+type Day = <Sun, Mon, Tue, Wed, Thu, Fri, Sat, Day>;
+
+proc main()
+  {
+    var d : Day := Day.Tue;
+    writeln "Day.Tue = ", d;
+    writeln "Day.Day = ", Day.Day;
+  }

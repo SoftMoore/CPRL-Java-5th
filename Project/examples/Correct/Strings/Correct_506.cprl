@@ -1,0 +1,14 @@
+proc main()
+  {
+    var name : String;
+    write "Enter a name: ";
+    read name;
+    writeName(name);
+    writeln;
+  }
+
+proc writeName(n : String)
+  {
+    write "Hello, ", n, ".";
+  }
+

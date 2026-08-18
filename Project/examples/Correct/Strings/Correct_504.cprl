@@ -1,0 +1,16 @@
+proc main()
+  {
+    var name1 : String := "John";
+    var name2 : String;
+    writeln "Name1 is ", name1, '.';
+    writeln "Hello, ", name1, '.';
+
+    name1 := "Joan";
+    writeln "Name1 changed to ", name1, '.';
+    writeln  "Hello, ", name1, '.';
+
+    name2 := "Barbara";
+    writeln "Name2 is ", name2, '.';
+    writeln "Hello, ", name2, '.';
+  }
+

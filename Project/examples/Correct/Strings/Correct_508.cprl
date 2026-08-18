@@ -1,0 +1,19 @@
+proc main()
+  {
+    var name : String := "Marie";
+    writeln "The length of \"", name, "\" is ", name.length, '.';
+    write "The chars in ", name, " are ";
+    writeChars(name);
+    writeln '.';
+  }
+
+proc writeChars(s : String)
+  {
+    for i in 0..s.length - 1 loop
+      {
+        write '\'', s[i], '\'';
+
+        if i < s.length - 1 then
+            write ' ';
+      }
+  }

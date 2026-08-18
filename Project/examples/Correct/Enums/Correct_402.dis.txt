@@ -1,0 +1,18 @@
+   0:  CALL 1
+   5:  HALT
+   6:  PROC 4
+  11:  LDLADDR 8
+  16:  LDCINT 2
+  21:  STOREW
+  22:  LDCSTR "Day.Tue = "
+  47:  PUTSTR
+  48:  LDLADDR 8
+  53:  LOADW
+  54:  PUTINT
+  55:  PUTEOL
+  56:  LDCSTR "Day.Day = "
+  81:  PUTSTR
+  82:  LDCINT 7
+  87:  PUTINT
+  88:  PUTEOL
+  89:  RET0

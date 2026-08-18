@@ -1,0 +1,38 @@
+for Sun:
+    pos = 0
+   succ = Mon
+
+for Mon:
+    pos = 1
+   pred = Sun
+   succ = Tue
+
+for Tue:
+    pos = 2
+   pred = Mon
+   succ = Wed
+
+for Wed:
+    pos = 3
+   pred = Tue
+   succ = Thu
+
+for Thu:
+    pos = 4
+   pred = Wed
+   succ = Fri
+
+for Fri:
+    pos = 5
+   pred = Thu
+   succ = Sat
+
+for Sat:
+    pos = 6
+   pred = Fri
+
+... attempting to compute pred(Day.Sun)
+Can't compute pred(Day.Sun)
+
+... attempting to compute succ(Day.Sat)
+Can't compute succ(Day.Sat)

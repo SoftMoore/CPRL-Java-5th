@@ -1,0 +1,95 @@
+   CALL _main
+   HALT
+_writeStr:
+   PROC 4
+   LDLADDR 8
+   LDCINT 0
+   STOREW
+L0:
+   LDLADDR 8
+   LOADW
+   LDLADDR -24
+   LOADW
+   LDCINT 1
+   SUB
+   BG L1
+   LDLADDR -24
+   LDCINT 4
+   ADD
+   LDLADDR 8
+   LOADW
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   PUTCH
+   LDLADDR 8
+   LDLADDR 8
+   LOADW
+   INC
+   STOREW
+   BR L0
+L1:
+   RET 24
+_makeMyString:
+   PROC 4
+   LDLADDR -8
+   LOADW
+   LDLADDR -4
+   LOADW
+   LOADW
+   STOREW
+   LDLADDR 8
+   LDCINT 0
+   STOREW
+L2:
+   LDLADDR 8
+   LOADW
+   LDLADDR -4
+   LOADW
+   LOADW
+   LDCINT 1
+   SUB
+   BG L3
+   LDLADDR -8
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR 8
+   LOADW
+   LDCINT 2
+   MUL
+   ADD
+   LDLADDR -4
+   LOADW
+   LDCINT 4
+   ADD
+   LDLADDR 8
+   LOADW
+   LDCINT 2
+   MUL
+   ADD
+   LOAD2B
+   STORE2B
+   LDLADDR 8
+   LDLADDR 8
+   LOADW
+   INC
+   STOREW
+   BR L2
+L3:
+   RET 8
+_main:
+   PROC 24
+   LDLADDR 8
+   LDCSTR "Chloe"
+   CALL _makeMyString
+   LDCSTR "Hello, "
+   PUTSTR
+   LDLADDR 8
+   LOAD 24
+   CALL _writeStr
+   LDCSTR "."
+   PUTSTR
+   PUTEOL
+   RET 0

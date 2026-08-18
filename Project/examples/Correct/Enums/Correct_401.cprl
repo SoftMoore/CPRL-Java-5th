@@ -1,0 +1,11 @@
+type Day = <Sun, Mon, Tue, Wed, Thu, Fri, Sat>;
+
+proc main()
+  {
+    var wed : Day := Day.Wed;
+    writeln "Day number for var wed is ", wed;
+    writeln "Day number for Friday is  ", Day.Fri;
+
+    for d in Day.Sun..Day.Sat loop
+        writeln "day number = ", d;
+  }

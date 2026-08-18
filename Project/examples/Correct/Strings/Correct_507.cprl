@@ -1,0 +1,15 @@
+proc main()
+  {
+    var name : String;
+    name := readName();
+    writeln "Your name is ", name, ".";
+  }
+
+fun readName() : String
+  {
+    var name : String;
+    write "What is your name?  ";
+    read name;
+    writeln "You entered ", name, ".";
+    return name;
+  }

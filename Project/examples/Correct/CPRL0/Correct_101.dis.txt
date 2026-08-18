@@ -1,0 +1,28 @@
+   0:  PROGRAM 10
+   5:  CALL 1
+  10:  HALT
+  11:  LDGADDR 0
+  16:  LDCINT 7
+  21:  STOREW
+  22:  LDGADDR 4
+  27:  LDCINT 5
+  32:  LDGADDR 0
+  37:  LOADW
+  38:  MUL
+  39:  STOREW
+  40:  LDGADDR 8
+  45:  LDCCH 'X'
+  48:  STORE2B
+  49:  LDCSTR "n = "
+  62:  PUTSTR
+  63:  LDGADDR 4
+  68:  LOADW
+  69:  PUTINT
+  70:  PUTEOL
+  71:  LDCSTR "c = "
+  84:  PUTSTR
+  85:  LDGADDR 8
+  90:  LOAD2B
+  91:  PUTCH
+  92:  PUTEOL
+  93:  RET0

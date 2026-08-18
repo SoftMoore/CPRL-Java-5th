@@ -1,0 +1,11 @@
+// test that byte can be used as index for an array
+
+type T = array[5] of Integer;
+
+proc main()
+  {
+    var table : T  := { 0, 1, 2, 3, 4 };
+    var b : Byte := 3;
+
+    writeln table[b];
+  }

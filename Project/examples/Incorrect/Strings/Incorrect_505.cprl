@@ -1,0 +1,12 @@
+proc main()
+  {
+    var name : String := "Joe";
+    writeln "Name is ", name, '.';
+    changeName(name);
+    writeln "Name changed to ", name, '.';
+  }
+
+proc changeName(var n : String)       // var param is o.k.
+  {
+    n[0] := 'M';         // can't modify characters in a string
+  }

@@ -1,0 +1,17 @@
+// test for-loop range can't have mixed types
+
+type Day = <Sun, Mon, Tue, Wed, Thu, Fri, Sat>;
+
+proc main()
+  {
+    for d in Day.Sun..Day.Sat loop   // O.k.
+        write d;
+    writeln;
+
+    for d in 0..6 loop              // O.k.
+        write d;
+    writeln;
+
+    for d in 0..Day.Sat loop        // *** Illegal in CPRL ***
+        writeln d;
+  }

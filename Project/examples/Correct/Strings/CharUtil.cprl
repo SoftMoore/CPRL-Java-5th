@@ -1,0 +1,141 @@
+// true true true false false false
+// true true true false false false
+// true true true false false false
+// true true true false false false
+// true true true false false false
+// true true true false false false
+// \t   \n   \r   \"    \'    \\
+
+proc main()
+  {
+    write boolToStr(isLetter('A')), " ";
+    write boolToStr(isLetter('C')), " ";
+    write boolToStr(isLetter('z')), " ";
+    write boolToStr(isLetter('<')), " ";
+    write boolToStr(isLetter('~')), " ";
+    write boolToStr(isLetter('7'));
+    writeln;
+
+    write boolToStr(isDigit('0')), " ";
+    write boolToStr(isDigit('4')), " ";
+    write boolToStr(isDigit('9')), " ";
+    write boolToStr(isDigit('D')), " ";
+    write boolToStr(isDigit('*')), " ";
+    write boolToStr(isDigit('?'));
+    writeln;
+
+    write boolToStr(isLetterOrDigit('S')), " ";
+    write boolToStr(isLetterOrDigit('n')), " ";
+    write boolToStr(isLetterOrDigit('9')), " ";
+    write boolToStr(isLetterOrDigit('@')), " ";
+    write boolToStr(isLetterOrDigit('$')), " ";
+    write boolToStr(isLetterOrDigit('\''));
+    writeln;
+
+    write boolToStr(isBinaryDigit('0')), " ";
+    write boolToStr(isBinaryDigit('1')), " ";
+    write boolToStr(isBinaryDigit('0')), " ";
+    write boolToStr(isBinaryDigit('8')), " ";
+    write boolToStr(isBinaryDigit('F')), " ";
+    write boolToStr(isBinaryDigit('#'));
+    writeln;
+
+    write boolToStr(isHexDigit('3')), " ";
+    write boolToStr(isHexDigit('C')), " ";
+    write boolToStr(isHexDigit('f')), " ";
+    write boolToStr(isHexDigit('G')), " ";
+    write boolToStr(isHexDigit(';')), " ";
+    write boolToStr(isHexDigit('.'));
+    writeln;
+
+    write boolToStr(isEscapeChar('\t')), " ";
+    write boolToStr(isEscapeChar('\n')), " ";
+    write boolToStr(isEscapeChar('\"')), " ";
+    write boolToStr(isEscapeChar('u')), " ";
+    write boolToStr(isEscapeChar('r')), " ";
+    write boolToStr(isEscapeChar('-'));
+    writeln;
+
+    write getUnescapedChar('\t'), "   ";
+    write getUnescapedChar('\n'), "   ";
+    write getUnescapedChar('\r'), "   ";
+    write getUnescapedChar('\"'), "    ";
+    write getUnescapedChar('\''), "    ";
+    write getUnescapedChar('\\');
+    writeln;
+  }
+
+fun boolToStr(b : Boolean) : String
+  {
+    if b then
+        return "true";
+    else
+        return "false";
+  }
+
+// Returns true only if the specified character is a letter;
+// i.e., the character is in 'A'..'Z' + 'a'..'z'.
+fun isLetter(ch : Char) : Boolean
+  {
+    return (ch >= 'a' and ch <= 'z') or (ch >= 'A' and ch <= 'Z');
+  }
+
+// Returns true only if the specified character is a digit;
+// i.e., the character is in '0'..'9'
+fun isDigit(ch : Char) : Boolean
+  {
+    return ch >= '0'and ch <= '9';
+  }
+
+// Returns true only if the specified character is a letter or a digit;
+// i.e., the character is in 'A'..'Z' + 'a'..'z + '0'..'9'.
+fun isLetterOrDigit(ch : Char) : Boolean
+  {
+    return isLetter(ch) or isDigit(ch);
+  }
+
+// Returns true only if the specified character is a binary digit;
+// i.e., the character is either '0' or '1'.
+fun isBinaryDigit(ch : Char) : Boolean
+  {
+    return ch = '0' or ch = '1';
+  }
+
+// Returns true only if the specified character is a hex digit;
+// i.e., the character is in '0'..'9' + 'A'..'F' + 'a'..'f'.
+fun isHexDigit(ch : Char) : Boolean
+  {
+    if isDigit(ch) then
+        return true;
+    else
+        return (ch >= 'A' and ch <= 'F') or (ch >= 'a' and ch <= 'f');
+  }
+
+// Returns true only if the specified character is an escaped character.
+fun isEscapeChar(c : Char) : Boolean
+  {
+    return c = '\t' or c = '\n' or c = '\r'
+        or c = '\"' or c = '\'' or c = '\\';
+  }
+
+// Unescapes characters.  For example, if parameter ch is a tab,
+// this method will return "\\t"
+fun getUnescapedChar(ch : Char) : String
+  {
+    var result : String := " ";   // reserve one space
+
+    if ch = '\t' then         // tab
+        return "\\t";
+    else if ch = '\n' then    // newline
+        return "\\n";
+    else if ch = '\r' then    // carriage return
+        return "\\r";
+    else if ch = '\"' then    // double quote
+        return "\\\"";
+    else if ch = '\'' then    // single quote
+        return "\\\'";
+    else if ch = '\\' then    // backslash
+        return "\\\\";
+    else
+        return "";
+  }

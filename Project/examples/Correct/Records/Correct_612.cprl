@@ -1,0 +1,102 @@
+type Month = <invalid,
+              January, February, March,
+              April,   May,      June,
+              July,    August,   September,
+              October, November, December>;
+
+var monthNames : array[13] of String
+             := { "invalid",
+                  "January", "February", "March",
+                  "April",   "May",      "June",
+                  "July",    "August",   "September",
+                  "October", "November", "December"
+                };
+
+type Date = record
+  {
+    day   : Integer;
+    month : Integer;
+    year  : Integer;
+  };
+
+var maxDays : array[13] of Integer :=  { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+fun isLeapYear(year : Integer) : Boolean
+  {
+    if year mod 4 != 0 then
+        return false;
+    else if year mod 400 = 0 then
+        return true;
+    else if year mod 100 = 0 then
+        return false;
+    else
+        return true;
+  }
+
+// max days in a month depends on whether or not the year is a leap year
+fun maxDaysInMonth(month : Integer, year : Integer) : Integer
+  {
+    if month = 2 and isLeapYear(year) then
+        return maxDays[month] + 1;
+    else
+        return maxDays[month];
+  }
+
+fun isValidDate(d : Date) : Boolean
+  {
+    // check that year is within reasonable limits
+    if d.year < 0 or d.year > 5000 then
+        return false;
+
+    if d.month < 1 or d.month > 12 then
+        return false;
+
+    if d.day < 1 or d.day > maxDaysInMonth(d.month, d.year) then
+        return false;
+
+    return true;
+  }
+
+proc checkDate(d : Date)
+  {
+    writeDate(d);
+
+    if isValidDate(d) then
+        writeln " is a valid date.";
+    else
+        writeln " is not a valid date.";
+  }
+
+proc writeDate(d : Date)
+  {
+    if not isValidDate(d) then
+        write d.day, "-", d.month, "-", d.year, " is not a valid date";
+    else
+        write monthNames[d.month], " ", d.day, ", ", d.year;
+  }
+
+proc main()
+  {
+    var dates : array[6] of Date :=
+      {
+        { 15,  7, 2021 },
+        {  1,  1, 2026 },
+        { 31, 12, 2025 },
+        { 25,  5, 1958 },
+        { 15, 13, 2021 },    // an invalid date
+        { 29,  2, 2024 }    // this was a leap year
+     };
+
+    writeln "Dates:";
+    for i in 0..5 loop
+      {
+        writeDate(dates[i]);
+        writeln;
+      }
+
+    writeln;
+
+    writeln "Month names:";
+    for d in Month.January..Month.December loop
+        writeln monthNames[d];
+  }

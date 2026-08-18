@@ -1,0 +1,30 @@
+   0:  CALL 1
+   5:  HALT
+   6:  PROC 4
+  11:  LDLADDR 8
+  16:  LDCSTR "John"
+  29:  STOREW
+  30:  LDCSTR "Name is "
+  51:  PUTSTR
+  52:  LDLADDR 8
+  57:  LOADW
+  58:  PUTSTR
+  59:  LDCCH '.'
+  62:  PUTCH
+  63:  PUTEOL
+  64:  LDLADDR 8
+  69:  CALL 51
+  74:  LDCSTR "Name changed to "
+ 111:  PUTSTR
+ 112:  LDLADDR 8
+ 117:  LOADW
+ 118:  PUTSTR
+ 119:  LDCCH '.'
+ 122:  PUTCH
+ 123:  PUTEOL
+ 124:  RET0
+ 125:  LDLADDR -4
+ 130:  LOADW
+ 131:  LDCSTR "Johnny"
+ 148:  STOREW
+ 149:  RET4

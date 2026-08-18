@@ -1,0 +1,13 @@
+proc main()
+  {
+    var name : String := "Carrie";
+    var n : Integer := 7;
+
+    // can't add integers and strings
+    writeln name + n;
+    writeln n + name;
+    n := 7 + "Diana";
+    n := "Diana" + 3;
+    name := 7 + "Angela";
+    name := "Angela" - 21;
+  }

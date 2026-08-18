@@ -1,0 +1,13 @@
+type Month = <Jan,  Feb, Mar, Apr, May, June,
+                   July, Aug, Sep, Oct, Nov, Dec>;
+
+var months : array[12] of String :=
+  { "January", "February", "March",     "April",   "May",      "June",
+    "July",    "August",   "September", "October", "November", "December" };
+
+proc main()
+  {
+    writeln "The months are as follows:";
+    for m in Month.Jan..Month.Dec loop
+        writeln months[m];
+  }

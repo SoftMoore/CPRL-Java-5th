@@ -1,0 +1,18 @@
+Parsing Incorrect_401.cprl...
+*** Syntax error detected near line 7, character 46:
+    "Gri" is not a valid named constant for enum type Day
+Errors detected in Incorrect_401.cprl -- parsing terminated.
+
+Parsing Incorrect_402.cprl...
+*** Syntax error detected near line 1, character 48:
+    Identifier "Mon" is already defined in the current scope.
+*** Syntax error detected near line 1, character 53:
+    Identifier "Wed" is already defined in the current scope.
+Errors detected in Incorrect_402.cprl -- parsing terminated.
+
+Parsing Incorrect_403.cprl...
+Parsing complete.
+
+Parsing Incorrect_404.cprl...
+Parsing complete.
+

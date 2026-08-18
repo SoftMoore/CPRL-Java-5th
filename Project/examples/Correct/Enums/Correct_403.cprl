@@ -1,0 +1,17 @@
+type Day = <Sun, Mon, Tue, Wed, Thu, Fri, Sat>;
+
+proc main()
+  {
+    for d in Day.Sun..Day.Sat loop
+      {
+        if isWeekDay(d) then
+            writeln "day ", d, " is a weekday";
+        else
+            writeln "day ", d, " is not a weekday";
+      }
+  }
+
+fun isWeekDay(d : Day) : Boolean
+  {
+    return d >= Day.Mon and d <= Day.Fri;
+  }

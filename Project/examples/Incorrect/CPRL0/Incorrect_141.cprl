@@ -1,0 +1,14 @@
+// test initialization of Byte is in range 0..255
+
+type T = array[5] of Byte;
+
+proc main()
+  {
+    var table : T  := { 10, 20, 30, 40, 500 };
+    var b : Byte := 256;
+
+    writeln b;
+
+    for i in 0..4 loop
+        writeln table[i];
+  }

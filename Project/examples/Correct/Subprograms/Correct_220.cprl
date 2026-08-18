@@ -1,0 +1,13 @@
+// Test user-defined function ord() and builtin function chr().
+
+proc main()
+  {
+    writeln ord('A');
+    writeln chr(65);
+  }
+
+// user-defined ord() function
+fun ord(c : Char) : Integer
+  {
+    return 70;
+  }
