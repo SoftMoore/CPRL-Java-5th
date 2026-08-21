@@ -1,6 +1,6 @@
 ## *Compiler Design Using Java&reg;: An Object-Oriented Approach (Fifth Edition)*
 
-<!-- img align="left" src="https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/1734139137.jpg?viewkey=a8222fcf395ef64776fd86979c03044409b85cd9e416ad3e69974a51cfdace4c" alt="Image of Book Cover" -->
+<img align="left" src="https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/1734139145.jpg?viewkey=6bbcbb6e85814cea335281fcf8641ae0789cd7f7c7695751eb755bee297f3440" alt="Image of Book Cover">
 
 This repository contains handouts, PowerPoint slides, and Java source files to accompany
 the book *Compiler Design Using Java&reg;: An Object-Oriented Approach* (Fifth Edition)
@@ -11,10 +11,9 @@ records, enum types, and subprograms.  The target language for the compiler is a
 language for the CPRL Virtual Machine (CVM), a virtual machine with a stack-based
 architecture that is similar to but much simpler than the Java Virtual Machine (JVM).
 Organization of the compiler project is described in Appendix A.  The book is available on
-[Amazon](https://www.amazon.com/Compiler-Design-Using-Java-Object-Oriented/dp/1734139137/),
-[Barnes & Noble](https://www.barnesandnoble.com/w/compiler-design-using-java-john-i-moore/1145572079?ean=9781734139136),
-and, at a discount, directly from the publisher
-[IngramSpark](https://shop.ingramspark.com/b/084?YxZfFPr7uSjvbtpJJMv9QFaljVbY19VPl1HABnIZfzl).
+[Amazon](https://www.amazon.com/Compiler-Design-Using-Java-Object-Oriented/dp/1734139145/)
+or at a discount directly from the publisher
+[IngramSpark](https://shop.ingramspark.com/b/084?params=w1I2T9ORng1h1Rnnvpj7Q0J0kCej9VCqChBWSpIw8pY).
 
 The following sections from the book are provided as PDF documents in the `Book` directory.
 * Table of Contents
