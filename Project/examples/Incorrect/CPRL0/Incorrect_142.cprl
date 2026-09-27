@@ -1,0 +1,8 @@
+// test conditional expression errors
+
+proc main()
+  {
+    var x : Integer := 7;
+    writeln x ? "true" : "false";   // first expression does not have type boolean
+    writeln x < 12 ? true : x;      // second and third expressions have different types
+  }
