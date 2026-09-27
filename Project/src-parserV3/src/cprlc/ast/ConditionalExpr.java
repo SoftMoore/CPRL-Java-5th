@@ -6,11 +6,18 @@ import common.Position;
 
 import cprlc.Type;
 
+/**
+ * The abstract syntax tree node for a conditional expression.  Similar to Java and
+ * other C-based languages, a conditional expression has a ternary operator "?:"
+ * that uses two symbols and three expressions as follows.
+ * <code> condition ? exprTrue : exprFalse</code> 
+ */
 public class ConditionalExpr extends Expression
   {
     private Expression condition;
     private Expression exprTrue;
     private Expression exprFalse;
+    private Position   colonPos;
 
     // labels used during code generation
     private String L1 = newLabel();   // label of address at end of exprTrue
@@ -27,17 +34,18 @@ public class ConditionalExpr extends Expression
      *                  result of the compound expression.
      * @param exprTrue  The expression whose value is used if the condition is true.
      * @param exprFalse The expression whose value is used if the condition is false.
-     * @param colonPosition Position of the colon symbol (for error reporting).
+     * @param colonPos  Position of the colon symbol (for error reporting).
      */
     public ConditionalExpr(Expression condition,
                            Expression exprTrue,
                            Expression exprFalse,
-                           Position   colonPosition)
+                           Position   colonPos)
       {
         super(exprTrue.type(), condition.position());
         this.condition = condition;
         this.exprTrue  = exprTrue;
         this.exprFalse = exprFalse;
+        this.colonPos  = colonPos;
       }
 
     @Override
@@ -59,9 +67,9 @@ public class ConditionalExpr extends Expression
             if (!exprTrue.type().equals(exprFalse.type()))
               {
                 setType(Type.UNKNOWN);
-                var errorMsg = "For a conditional expression, the expressions on the "
-                             + "left and right of the colon should have the same type.";
-                throw error(position(), errorMsg);
+                var errorMsg = "Expressions on left and right of "
+                             + "colon should have the same type.";
+                throw error(colonPos, errorMsg);
               }
           }
         catch (ConstraintException e)
