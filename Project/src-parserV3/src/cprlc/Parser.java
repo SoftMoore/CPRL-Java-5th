@@ -462,9 +462,8 @@ public final class Parser
             match(Symbol.recordRW);
             match(Symbol.leftBrace);
 
-            List<FieldDecl> fieldDecls;
             idTable.openScope(ScopeLevel.RECORD);
-            fieldDecls = parseFieldDecls();
+            var fieldDecls = parseFieldDecls();
             idTable.closeScope();
 
             var typeDecl = new RecordTypeDecl(typeId, fieldDecls);

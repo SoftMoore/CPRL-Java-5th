@@ -319,15 +319,9 @@ public final class Parser
             match(Symbol.recordRW);
             match(Symbol.leftBrace);
 
-            try
-              {
-                idTable.openScope(ScopeLevel.RECORD);
-                parseFieldDecls();
-              }
-            finally
-              {
-                idTable.closeScope();
-              }
+            idTable.openScope(ScopeLevel.RECORD);
+            parseFieldDecls();
+            idTable.closeScope();
 
             idTable.add(typeId, IdType.recordTypeId);
             match(Symbol.rightBrace);
