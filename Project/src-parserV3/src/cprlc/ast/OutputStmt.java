@@ -41,7 +41,7 @@ public class OutputStmt extends Statement
       {
         return expressions;
       }
-    
+
     @Override
     public void checkConstraints()
       {
@@ -80,7 +80,7 @@ public class OutputStmt extends Statement
                 emit("PUTINT");
             else if (type == Type.Char)
                 emit("PUTCH");
-            else if (type == Type.String)   // must be a string type
+            else if (type == Type.String)
                 emit("PUTSTR");
             else
               {

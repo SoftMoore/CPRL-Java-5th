@@ -282,8 +282,9 @@ public class Variable extends Expression
           {
             // Previous code leaves address of this variable on top
             // of stack.  We need to emit the value at that address.
-            // Promote Byte values to Integer if necessary.
             emitLoadInst(type());
+
+            // Promote Byte values to Integer if necessary.
             if (type() == Type.Byte)
               {
                 emit("BYTE2INT");
